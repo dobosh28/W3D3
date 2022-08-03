@@ -118,13 +118,6 @@ end
 def merge(left_arr, right_arr)
   merged = []
 
-  # left_arr.each_with_index do |ele, i|
-  #   if ele < right_arr[i]
-  #     merged << ele
-  #   else 
-  #     merged << right_arr[i]
-  #   end
-
   debugger
   while !left_arr.length == 0 && !right_arr.length == 0 
     if left_arr[0] < right_arr[0]

@@ -103,32 +103,25 @@ end
 
 
 def merge_sort(arr)
-  
   return arr if arr.length == 1
- 
   mid_idx = arr.length / 2 
-
   left_arr = arr[0...mid_idx]
   right_arr = arr[mid_idx..-1]
 
   merge(merge_sort(left_arr), merge_sort(right_arr))
-
 end
 
 def merge(left_arr, right_arr)
-  merged = []
-
-  while !left_arr.length == 0 && !right_arr.length == 0 
+  sorted = []
+  while !left_arr.empty? && !right_arr.empty?
     if left_arr[0] < right_arr[0]
-      merged << left_arr[0]
-      left_arr.delete_at(0)
-    elsif right_arr[0] < left_arr[0]
-      merged << right_arr
-      right_arr.delete_at(0)
+      sorted << left_arr.shift
+    elsif right_arr[0] <= left_arr[0]
+      sorted << right_arr.shift
     end
   end
 
-  merged
+  sorted + left_arr + right_arr
 end
 
 p merge_sort([38, 27, 43, 3, 9, 82, 10])

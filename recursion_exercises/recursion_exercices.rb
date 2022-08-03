@@ -103,11 +103,11 @@ end
 
 
 def merge_sort(arr)
-  #base case arr length 0
+  
   return arr if arr.length == 1
-  #until the array is at length 1, sub array = array/2
+ 
   mid_idx = arr.length / 2 
-  #merge first ele of each subarray 
+
   left_arr = arr[0...mid_idx]
   right_arr = arr[mid_idx..-1]
 
@@ -118,7 +118,6 @@ end
 def merge(left_arr, right_arr)
   merged = []
 
-  debugger
   while !left_arr.length == 0 && !right_arr.length == 0 
     if left_arr[0] < right_arr[0]
       merged << left_arr[0]
